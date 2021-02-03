@@ -18,6 +18,9 @@ struct AstronautView: View {
                                 .scaledToFit()
                                 .frame(width: geometry.size.width)
 
+                            List(self.astronaut.missions) { mission in
+                                Text(mission.displayName)
+                            }
                             Text(self.astronaut.description)
                                 .padding()
                                 .layoutPriority(1)

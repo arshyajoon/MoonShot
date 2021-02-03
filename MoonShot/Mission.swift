@@ -21,6 +21,13 @@ struct Mission: Codable, Identifiable {
     var displayName: String {
         "Apollo \(id)"
     }
+    var crewMembers: String {
+        var namesArray = [String]()
+        for i in crew {
+            namesArray.append(i.name)
+        }
+        return namesArray.joined(separator: ", ")
+    }
 
     var image: String {
         "apollo\(id)"
